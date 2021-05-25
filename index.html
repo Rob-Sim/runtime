@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch runner</title>
+
+    <link rel="stylesheet" href="styles.css"></style>
+</head>
+<body>
+    <div class="page">
+        <div id="raceEnd">
+            <!-- The name of the competitor that had the highest lap count and lowest overall time
+            The name of the competitor with the fastest (completed) lap and the time taken for it -->
+            <div class="raceEnd__item">
+                <h1 class="raceEnd__title">Lowest time overall run </h1>
+                <div class="raceEnd__info--container">
+                    <h2 class="raceEnd__lowestOvr--info">
+                        Name: <span id="raceEnd__lowestOvr--name"></span>
+    
+                    <h2 class="raceEnd__lowestOvr--info"> 
+                        Record: <span id="raceEnd__lowestOvr--time"></span>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="raceEnd__item">
+                <h1 class="raceEnd__title">Fastest lap time </h1>
+                <div class="raceEnd__info--container">
+                    <h2 class="raceEnd__fastestLap--info">
+                        Name: <span id="raceEnd__fastestLap--name"></span>
+    
+                    <h2 class="raceEnd__fastestLap--info"> 
+                        Record: <span id="raceEnd__fastestLap--time"></span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    
+        <div class="controls">
+            <div class="timer__container">
+                <h1> <span id="timer__min">00</span>m :</h1>
+                <h1> <span id="timer__sec">00</span>s :</h1>
+                <h1> <span id="timer__mili">00</span>ms</h1>
+            </div>
+        
+            <div class="buttons__container">
+                <button id="timer-start" onclick="startTimer()">Start Race</button>
+                <button id="timer-stop" onclick="endRace()">End race</button>
+            </div>
+    
+            <form id="runner__form" action="" onsubmit="submitted()">
+                <input type="text" name="name" placeholder="Name" id="runner--name">
+            </form>
+        </div>
+    
+        <div class="timers">
+            <table id="lap-time__container">
+                <tr>
+                    <th>Name</th>
+                    <th>Total time</th>
+                    <th>Fastest lap time</th>
+                    <th>Recent lap time</th>
+                    <th>Average lap time</th>
+                </tr>
+    
+                <!-- lap stats here -->
+            </table>
+        </div>
+    </div>
+    <script src="timer.js"></script>
+</body>
+</html>
