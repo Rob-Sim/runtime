@@ -33,25 +33,25 @@ function createEle(runnerName){
     runnerTitle.onclick = function(){lapBtn(runnerName)}
     cont.appendChild(runnerTitle)
 
-    //Total time
-    let headerTotal = document.createElement("td");
-    headerTotal.id = runnerName + "__total-time"
-    cont.appendChild(headerTotal)
+    //Recent lap
+    let headerRecent = document.createElement("td");
+    headerRecent.id = runnerName + "__recent-lap"
+    cont.appendChild(headerRecent)
 
     //Fastest Lap
     let headerFastest = document.createElement("td");
     headerFastest.id = runnerName + "__fastest-lap"
     cont.appendChild(headerFastest)
 
-    //Recent lap
-    let headerRecent = document.createElement("td");
-    headerRecent.id = runnerName + "__recent-lap"
-    cont.appendChild(headerRecent)
-
     //Average lap
     let headerAverage = document.createElement("td");
     headerAverage.id = runnerName + "__average-lap"
     cont.appendChild(headerAverage)
+
+    //Total time
+    let headerTotal = document.createElement("td");
+    headerTotal.id = runnerName + "__total-time"
+    cont.appendChild(headerTotal)
 
     table.appendChild(cont)
 }

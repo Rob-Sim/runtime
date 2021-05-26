@@ -40,18 +40,18 @@
     
         <div class="controls">
             <div class="timer__container">
-                <h1> <span id="timer__min">00</span>m :</h1>
-                <h1> <span id="timer__sec">00</span>s :</h1>
-                <h1> <span id="timer__mili">00</span>ms</h1>
-            </div>
-        
-            <div class="buttons__container">
-                <button id="timer-start" onclick="startTimer()">Start Race</button>
-                <button id="timer-stop" onclick="endRace()">End race</button>
+                <h1> <span id="timer__min">00</span>:</h1>
+                <h1> <span id="timer__sec">00</span>:</h1>
+                <h1> <span id="timer__mili">00</span></h1>
+
+                <div class="buttons__container">
+                    <button id="timer-start" onclick="startTimer()">Start Race</button>
+                    <button id="timer-stop" onclick="endRace()">End race</button>
+                </div>
             </div>
     
-            <form id="runner__form" action="" onsubmit="submitted(); return false">
-                <input type="text" name="name" placeholder="Name" id="runner--name">
+            <form id="runner__form" action=" " onsubmit="submitted();return false">
+                <input type="text" name="name" placeholder="Runner Name" id="runner--name">
             </form>
         </div>
     
@@ -59,10 +59,10 @@
             <table id="lap-time__container">
                 <tr>
                     <th>Name</th>
-                    <th>Total time</th>
-                    <th>Fastest lap time</th>
                     <th>Recent lap time</th>
+                    <th>Fastest lap time</th>
                     <th>Average lap time</th>
+                    <th>Total time</th>
                 </tr>
     
                 <!-- lap stats here -->
