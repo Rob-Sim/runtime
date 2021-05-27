@@ -10,34 +10,7 @@
 </head>
 <body>
     <div class="page">
-        <div id="raceEnd">
-            <!-- The name of the competitor that had the highest lap count and lowest overall time
-            The name of the competitor with the fastest (completed) lap and the time taken for it -->
-            <div class="raceEnd__item">
-                <h1 class="raceEnd__title">Lowest time overall run </h1>
-                <div class="raceEnd__info--container">
-                    <h2 class="raceEnd__lowestOvr--info">
-                        Name: <span id="raceEnd__lowestOvr--name"></span>
-    
-                    <h2 class="raceEnd__lowestOvr--info"> 
-                        Record: <span id="raceEnd__lowestOvr--time"></span>
-                    </h2>
-                </div>
-            </div>
 
-            <div class="raceEnd__item">
-                <h1 class="raceEnd__title">Fastest lap time </h1>
-                <div class="raceEnd__info--container">
-                    <h2 class="raceEnd__fastestLap--info">
-                        Name: <span id="raceEnd__fastestLap--name"></span>
-    
-                    <h2 class="raceEnd__fastestLap--info"> 
-                        Record: <span id="raceEnd__fastestLap--time"></span>
-                    </h2>
-                </div>
-            </div>
-        </div>
-    
         <div class="controls">
             <div class="timer__container">
                 <h1> <span id="timer__min">00</span>:</h1>
@@ -45,8 +18,11 @@
                 <h1> <span id="timer__mili">00</span></h1>
 
                 <div class="buttons__container">
-                    <button id="timer-start" onclick="startTimer()">Start Race</button>
-                    <button id="timer-stop" onclick="endRace()">End race</button>
+                    <input class="timer--radio" type="radio" id="timer-start" name="raceBtn" value="start" onclick="startTimer()">
+                    <label id="timer-label-start" class="timer--label" for="timer-start">Start</label>
+
+                    <input class="timer--radio" type="radio" id="timer-stop" name="raceBtn" value="stop" onclick="endRace()" checked>
+                    <label id="timer-label-stop" class="timer--label" for="timer-stop">Stop</label>
                 </div>
             </div>
     

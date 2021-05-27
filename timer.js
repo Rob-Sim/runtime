@@ -194,8 +194,7 @@ function findAvg(runner, runnerName){
     }
     //Display
     document.getElementById(runnerName + "__average-lap").innerText = timeString(runner.averageTime)
-
-    document.getElementById(`${runnerName}__total-time`).innerText = timeString(runner.totalTime)
+    document.getElementById(runnerName +"__total-time").innerText = timeString(runner.totalTime)
 }
 //Run on end race btn
 function endRace(){
@@ -203,7 +202,7 @@ function endRace(){
     clearInterval(timer)
     //Store stats from race
     let recordObj = {
-        lowestOvr: {
+        lowestAvg: {
             name: undefined,
             record: {min: 10000, sec:10000, ms:10000}
         },
@@ -213,17 +212,16 @@ function endRace(){
         }
     }
     //Use these shortcuts for comparisons
-    let lowestOvr = recordObj.lowestOvr.record
+    let lowestAvg = recordObj.lowestAvg.record
     let fastestLapTime = recordObj.fastestLap.record
 
     //For each runner within the runners object
     for (const runner in runners) {
 
-        //Check if their overall time is less than the current found lowest
-        let runnerOvr = runners[runner].totalTime
-        if(compareLap(runnerOvr, lowestOvr)){
-            lowestOvr = runnerOvr
-            recordObj.lowestOvr.name = runners[runner].name
+        let runnerAvg = runners[runner].averageTime
+        if(compareLap(runnerAvg, lowestAvg)){
+            lowestAvg = runnerAvg
+            recordObj.lowestAvg.name = runners[runner].name
         }
 
         //check if their fastest lap time is faster than the current fastest time found
@@ -235,7 +233,7 @@ function endRace(){
     }
 
     //Remerge obj with shortcuts
-    recordObj.lowestOvr.record = lowestOvr
+    recordObj.lowestAvg.record = lowestAvg
     recordObj.fastestLap.record = fastestLapTime
 
     //Display the stats found
@@ -244,9 +242,9 @@ function endRace(){
 
 //Update record visuals for the end of the race
 function displayEnd(recordObj){
-    document.getElementById("raceEnd__lowestOvr--name").innerText = recordObj.lowestOvr.name
-    document.getElementById("raceEnd__lowestOvr--time").innerText = timeString(recordObj.lowestOvr.record)
+    let fastestTimeDisp = document.getElementById(recordObj.fastestLap.name + "__fastest-lap")
+    fastestTimeDisp.style.color = "green"
 
-    document.getElementById("raceEnd__fastestLap--name").innerText = recordObj.fastestLap.name
-    document.getElementById("raceEnd__fastestLap--time").innerText = timeString(recordObj.fastestLap.record)
+    let avgTimeDisp = document.getElementById(recordObj.lowestAvg.name + "__average-lap")
+    avgTimeDisp.style.color = "green"
 }
